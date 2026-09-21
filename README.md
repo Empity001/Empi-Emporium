@@ -1,7 +1,7 @@
 # Empi-Emporium
 Empi Emporium es donde se reune todo lo que hace Empi :3
 
-Por ahora, aquí está la página para descargar **Empi Launcher** y ver las novedades de cada versión.
+Por ahora, aquí vive la página para bajar mi launcher y ver qué trae cada versión.
 
 Sitio: https://empity001.github.io/Empi-Emporium/
 

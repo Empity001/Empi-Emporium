@@ -131,7 +131,7 @@
         }
         const body = document.createElement('div')
         body.className = 'notes-body'
-        body.innerHTML = html || '<p>Esta versión no trae notas.</p>'
+        body.innerHTML = html || '<p>Esta versión salió sin notas, se me pasó.</p>'
         reader.append(body)
         reader.setAttribute('aria-labelledby', `tab-${selected}`)
         if (animate) {
@@ -170,7 +170,7 @@
         }
         if (source === 'snapshot') {
             const note = $('sourceNote')
-            note.textContent = 'No pude preguntarle a GitHub ahora mismo, así que esto es la última copia guardada. Puede faltar la versión más reciente.'
+            note.textContent = 'GitHub no me contestó, así que te enseño la última copia que guardé. Puede que falte la versión más nueva.'
             note.hidden = false
         }
         Field().refresh()
@@ -182,7 +182,7 @@
         const box = document.createElement('div')
         box.className = 'reader-error'
         renderFactsUnknown()
-        box.innerHTML = `<p>No pude cargar las novedades. Puedes leerlas directamente en GitHub.</p><a class="btn" target="_blank" rel="noopener" href="${RELEASES_PAGE}">Abrir los releases</a>`
+        box.innerHTML = `<p>Se me trabó cargando las novedades. Las puedes leer directo en GitHub.</p><a class="btn" target="_blank" rel="noopener" href="${RELEASES_PAGE}">Abrir los releases</a>`
         reader.append(box)
         $('rail').replaceChildren()
         Field().refresh()
