@@ -28,8 +28,9 @@
 
     const GLYPHS = '01#/+:*<>=_-'
     /** A title decoding out of noise, once. A screen reader hears the real text, not the noise. */
-    function scramble(el, ms = 520) {
+    function scramble(el, ms = 520, delay = 0) {
         if (!alive || !el) return
+        if (delay) { setTimeout(() => scramble(el, ms), delay); return }
         const text = el.textContent
         if (!text || text.length > 48) return
         const from = performance.now()

@@ -22,6 +22,7 @@ index.html            la página
 css/style.css         el diseño (Empi Proof Bench: negro, papel, puntos de media tinta, un solo acento rosa)
 js/field.js           el fondo de puntos (adaptado de Empi Publisher); el botón de arriba a la derecha lo detiene
 js/site.js            botón de descarga, novedades, lista de versiones
+js/motion.js          el movimiento que responde al puntero: el launcher de la portada se inclina, luz bajo el puntero, el botón contesta al clic
 js/notes.js           convierte las notas de un release (Markdown sencillo) en HTML seguro
 data/releases.json    copia de los releases, por si GitHub no responde
 scripts/              sync-releases.mjs, lo que usa la acción para guardar esa copia

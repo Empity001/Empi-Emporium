@@ -55,6 +55,7 @@
     let releases = []
     let selected = 0
     let shown = null   // what the facts and the buttons currently say, to notice when a newer release arrives
+    let rung = false   // the first ring through the dots (from the download button) has been sent
 
     const sizeMb = (bytes) => `${Math.round(bytes / 1048576)} MB`
 
@@ -83,9 +84,37 @@
         for (const id of ['factFile', 'factAgo']) { const el = $(id); el.textContent = 'Sin datos'; el.classList.remove('skel-line') }
     }
 
+    let thumbPlaced = false
+    /** The paper block behind the chosen version slides to it (it appears in place the first time, and when the rail is resized). */
+    function placeThumb(instant) {
+        const rail = $('rail'), thumb = rail.querySelector('.rail-thumb'), item = rail.querySelector('.rail-item[aria-selected="true"]')
+        if (!thumb || !item) return
+        const still = instant || !thumbPlaced
+        if (still) thumb.style.transition = 'none'
+        thumb.style.width = `${item.offsetWidth}px`
+        thumb.style.height = `${item.offsetHeight}px`
+        thumb.style.transform = `translate(${item.offsetLeft}px, ${item.offsetTop}px)`
+        thumb.style.opacity = '1'
+        if (still) { void thumb.offsetWidth; thumb.style.transition = '' }
+        thumbPlaced = true
+    }
+
+    let factsSeen = false, decodedFor = null
+    /** The three numerals of the latest version decode out of noise, once, when they are in view and their value is known. */
+    function decodeFacts() {
+        if (!factsSeen || !shown || decodedFor === shown) return
+        decodedFor = shown
+        ;['factVersion', 'factDate', 'factSize'].forEach((id, i) => Field().scramble($(id), 620, i * 110))
+    }
+
     function renderRail() {
         const rail = $('rail')
         rail.replaceChildren()
+        const thumb = document.createElement('i')
+        thumb.className = 'rail-thumb'
+        thumb.setAttribute('aria-hidden', 'true')
+        rail.append(thumb)
+        thumbPlaced = false
         releases.slice(0, SHOWN).forEach((release, i) => {
             const b = document.createElement('button')
             b.type = 'button'
@@ -135,7 +164,15 @@
         reader.append(body)
         reader.setAttribute('aria-labelledby', `tab-${selected}`)
         if (animate) {
-            for (const el of reader.children) { el.classList.remove('swap'); void el.offsetWidth; el.classList.add('swap') }
+            for (const el of reader.children) {
+                if (el.classList.contains('notes-body')) continue
+                el.classList.remove('swap'); void el.offsetWidth; el.classList.add('swap')
+            }
+            // the lines of the notes arrive one after another (a short stagger, capped)
+            body.classList.add('stagger')
+            let n = 0
+            for (const el of body.querySelectorAll('h4, p, li')) el.style.setProperty('--i', String(Math.min(n++, 14)))
+            setTimeout(() => body.classList.remove('stagger'), 1400)
             Field().tear(reader.querySelector('.reader-num'))
         }
         for (const b of $('rail').querySelectorAll('.rail-item')) {
@@ -143,6 +180,7 @@
             b.setAttribute('aria-selected', String(on))
             b.tabIndex = on ? 0 : -1
         }
+        placeThumb(!animate)
     }
 
     function select(i, animate = true) {
@@ -163,6 +201,7 @@
         renderFacts(list[0])
         renderRail()
         renderReader(false)
+        decodeFacts()
         $('sourceNote').hidden = true
         if (changed) {
             // a newer release than the one on screen just arrived: the numerals tear once
@@ -172,6 +211,13 @@
             const note = $('sourceNote')
             note.textContent = 'GitHub no me contestó, así que te enseño la última copia que guardé. Puede que falte la versión más nueva.'
             note.hidden = false
+        }
+        if (!rung) {
+            rung = true
+            setTimeout(() => {
+                const cta = document.querySelector('.hero [data-download]'), r = cta && cta.getBoundingClientRect()
+                if (r && r.bottom > 0 && r.top < window.innerHeight) Field().burst(cta)   // "your download is ready"
+            }, 500)
         }
         Field().refresh()
     }
@@ -232,9 +278,14 @@
     // ---------------------------------------------------------------- arrivals: things rise in as they come into view, once
     function reveal() {
         const items = document.querySelectorAll('.reveal')
-        if (!('IntersectionObserver' in window)) { for (const el of items) el.classList.add('in'); return }
+        if (!('IntersectionObserver' in window)) { for (const el of items) el.classList.add('in'); factsSeen = true; return }
         const io = new IntersectionObserver((entries) => {
-            for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) }
+            for (const e of entries) {
+                if (!e.isIntersecting) continue
+                e.target.classList.add('in'); io.unobserve(e.target)
+                if (e.target.classList.contains('display')) Field().scramble(e.target, 640, 120)
+                if (e.target.id === 'descarga') { factsSeen = true; decodeFacts() }
+            }
         }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 })
         for (const el of items) io.observe(el)
         // the field goes quiet under text that has just arrived
@@ -248,6 +299,8 @@
         const lines = document.querySelectorAll('.hero-title .line')
         lines.forEach((line, i) => setTimeout(() => Field().scramble(line, 560), 220 + i * 140))
         setTimeout(() => Field().tear(document.querySelector('.hero-title')), 220 + 560 + 200)
+        setTimeout(() => Field().tear(document.querySelector('.hero .frame')), 1300)
+        if ('ResizeObserver' in window) new ResizeObserver(() => placeThumb(true)).observe($('rail'))
         load()
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start)

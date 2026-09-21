@@ -19,6 +19,7 @@
 <body>
     <a class="skip" href="#descarga">Ir al contenido</a>
     <canvas id="life" aria-hidden="true"></canvas>
+    <p class="sr-only" id="dlStatus" role="status"></p>
 
     <header class="topbar">
         <a class="brand" href="#inicio" aria-label="Empi Emporium, inicio">
@@ -43,6 +44,7 @@
         <button class="icon-btn" id="lifeBtn" type="button" aria-pressed="true" aria-label="Movimiento del fondo" title="Movimiento">
             <svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2.5-6 5-6 7.5 0s5 6 7.5 0 3.5-4 5-3"/><path d="M2 18c2.5-4 5-4 7.5 0s5 4 7.5 0 3.5-2.5 5-2"/></svg>
         </button>
+        <i class="progress" aria-hidden="true"></i>
     </header>
 
     <main>
@@ -53,8 +55,8 @@
                 <p class="hero-sub rise" style="--i:2" data-quiet>Baja mis modpacks y los de mis amigowos, instala el Java que haga falta y los actualiza. Tú solo juegas.</p>
                 <div class="hero-actions rise" style="--i:3">
                     <a class="btn primary big" data-download href="https://github.com/Empity001/EmpiLauncher/releases/latest">
-                        <svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-                        Descargar para Windows
+                        <svg class="i dl-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                        <span class="btn-label"><span class="l1">Descargar para Windows</span><span class="l2" aria-hidden="true">¡Ya se baja! ;3</span></span>
                     </a>
                     <a class="btn big" href="#novedades">¿Qué hay de nuevo?</a>
                 </div>
@@ -162,8 +164,8 @@
                 <p class="foot-line">Aquí meto todo lo que hago ;3</p>
             </div>
             <a class="btn primary big" data-download href="https://github.com/Empity001/EmpiLauncher/releases/latest">
-                <svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-                Descargar para Windows
+                <svg class="i dl-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                <span class="btn-label"><span class="l1">Descargar para Windows</span><span class="l2" aria-hidden="true">¡Ya se baja! ;3</span></span>
             </a>
             <nav class="foot-links" data-quiet aria-label="Enlaces">
                 <a href="https://github.com/Empity001/EmpiLauncher" target="_blank" rel="noopener">Código del launcher</a>
@@ -174,6 +176,7 @@
 
     <script src="js/notes.js" defer></script>
     <script src="js/field.js" defer></script>
+    <script src="js/motion.js" defer></script>
     <script src="js/site.js" defer></script>
 </body>
 </html>

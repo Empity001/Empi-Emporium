@@ -143,24 +143,38 @@ html:not([data-field]) body::before {
 .btn.primary:active { transform: translate(var(--mx, 0px), var(--my, 0px)) scale(.97); }
 .btn.primary::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, transparent 32%, rgb(255 255 255 / .38) 50%, transparent 68%); transform: translateX(-130%); }
 .btn.primary:hover::before { transform: translateX(130%); transition: transform .8s var(--ease-out); }
+.btn-label { position: relative; display: inline-grid; overflow: hidden; }
+.btn-label > span { grid-area: 1 / 1; text-align: center; transition: transform .45s var(--ease-out), opacity .3s var(--ease); }
+.btn-label .l2 { transform: translateY(120%); opacity: 0; }
+.btn.done .l1 { transform: translateY(-120%); opacity: 0; }
+.btn.done .l2 { transform: none; opacity: 1; }
+.btn.done .dl-icon { animation: drop .6s var(--ease-out) 1; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 .chip { display: inline-flex; align-items: center; gap: 6px; width: fit-content; padding: 4px 12px; border-radius: 999px; background: rgb(255 255 255 / .06); border: 1px solid var(--hair); font: 500 11.5px/1.4 var(--font-mono); color: var(--text-2); }
 .link { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1.2 var(--font-mono); color: var(--text-2); text-decoration: none; padding: 6px 2px; transition: color .2s var(--ease); }
 .link:hover { color: var(--text); }
 
 /* ------------------------------------------------------------ modules: translucent, hairline, a corner of halftone that continues the ground */
+@property --px { syntax: '<length>'; inherits: false; initial-value: 0px; }
+@property --py { syntax: '<length>'; inherits: false; initial-value: 0px; }
+@property --spot { syntax: '<number>'; inherits: false; initial-value: 0; }
 .module {
     position: relative; isolation: isolate; padding: 24px 26px;
-    background: var(--module); border: 1px solid var(--hair); border-radius: var(--r-module);
+    background: radial-gradient(300px circle at var(--px) var(--py), rgb(241 239 232 / calc(var(--spot) * .085)), transparent 65%), var(--module);
+    border: 1px solid var(--hair); border-radius: var(--r-module);
     box-shadow: inset 0 1px 0 rgb(255 255 255 / .05), 0 24px 40px -28px rgb(0 0 0 / .85);
-    transition: border-color .3s var(--ease-out);
+    transition: border-color .3s var(--ease-out), --spot .45s var(--ease-out);
 }
 .module:hover { border-color: var(--hair-strong); }
+@media (hover: hover) and (pointer: fine) { html[data-motion=alive] .module:hover { --spot: 1; } }
 .module::before {
     content: ''; position: absolute; z-index: -1; top: 0; right: 0; width: 46%; height: 64%; pointer-events: none; border-radius: 0 var(--r-module) 0 0;
     background: radial-gradient(circle, rgb(241 239 232 / .22) 1px, transparent 1.5px) 0 0 / 9px 9px;
     -webkit-mask-image: radial-gradient(120% 120% at 100% 0, #000 0, transparent 68%);
     mask-image: radial-gradient(120% 120% at 100% 0, #000 0, transparent 68%);
+    transform-origin: 100% 0; transition: transform .8s var(--ease-out);
 }
+@media (hover: hover) and (pointer: fine) { html[data-motion=alive] .module:hover::before { transform: scale(1.16); } }
 .module-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
 .module-head h2 { font: 500 15px/1.4 var(--font-mono); letter-spacing: -.01em; }
 
@@ -189,7 +203,12 @@ html:not([data-field]) body::before {
 /* ------------------------------------------------------------ the latest version: four data tiles */
 .facts { padding-bottom: 8px; }
 .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-.tile { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 16px 18px 15px; border-radius: var(--r-tile); background: rgb(6 6 7 / .55); border: 1px solid var(--hair); }
+.tile {
+    display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 16px 18px 15px; border-radius: var(--r-tile); border: 1px solid var(--hair);
+    background: radial-gradient(200px circle at var(--px) var(--py), rgb(241 239 232 / calc(var(--spot) * .07)), transparent 65%), rgb(6 6 7 / .55);
+    transition: --spot .45s var(--ease-out), border-color .3s var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) { html[data-motion=alive] .tile:hover { --spot: 1; border-color: var(--hair-strong); } }
 .tile dt { font: 500 12px/1.2 var(--font-mono); color: var(--text-2); }
 .tile dd { font: 700 clamp(1.5rem, 2.4vw, 1.9rem)/1.1 var(--font-dot); min-height: 1.1em; overflow-wrap: anywhere; }
 .tile small { font: 400 11.5px/1.35 var(--font-mono); color: var(--text-3); overflow-wrap: anywhere; }
@@ -201,22 +220,32 @@ html:not([data-field]) body::before {
 
 /* ------------------------------------------------------------ novedades: a rail of versions and the notes of the chosen one */
 .notes-grid { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 32px; align-items: start; }
-.rail { position: sticky; top: calc(var(--topbar-h) + 24px); display: flex; flex-direction: column; gap: 6px; }
+.rail {   /* the versions sit in a module of their own: the dots read faintly through it, and the paper thumb slides inside */
+    position: sticky; top: calc(var(--topbar-h) + 24px); display: flex; flex-direction: column; gap: 6px; padding: 8px;
+    background: var(--module); border: 1px solid var(--hair); border-radius: var(--r-module);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / .05), 0 24px 40px -28px rgb(0 0 0 / .85);
+}
 .rail-item {
     display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; width: 100%; padding: 12px 16px; text-align: left; cursor: pointer;
-    font: inherit; color: var(--text); background: rgb(17 18 21 / .6); border: 1px solid var(--hair); border-radius: var(--r-tile);
+    position: relative; z-index: 1;
+    font: inherit; color: var(--text); background: transparent; border: 1px solid var(--hair); border-radius: var(--r-tile);
     transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .45s var(--spring);
+}
+.rail-thumb {   /* the paper block behind the chosen version; js/site.js places it */
+    position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none; opacity: 0;
+    background: var(--text); border-radius: var(--r-tile);
+    transition: transform .55s cubic-bezier(.34, 1.25, .64, 1), width .35s var(--ease-out), height .35s var(--ease-out), opacity .2s var(--ease);
 }
 .rail-item:hover { background: rgb(255 255 255 / .08); border-color: var(--hair-strong); }
 .rail-item:active { transform: scale(.98); transition-duration: .06s; }
 .rail-item .rv { font: 500 14px/1.3 var(--font-mono); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
 .rail-item .rd { font: 400 11.5px/1.35 var(--font-mono); color: var(--text-3); grid-column: 1; }
 .rail-item .rc { grid-column: 2; grid-row: 1 / span 2; }
-.rail-item[aria-selected=true] { background: var(--text); color: #0b0b0d; border-color: var(--text); }   /* selection is inversion */
+.rail-item[aria-selected=true] { background: transparent; color: #0b0b0d; border-color: transparent; transition-delay: 0s, .14s, 0s, 0s; }   /* selection is inversion: the ink turns dark as the paper arrives */
 .rail-item[aria-selected=true] .rd { color: var(--paper-ink); }
 .rail-item .chip { background: rgb(255 255 255 / .08); }
 .rail-item[aria-selected=true] .chip { background: rgb(11 11 13 / .1); border-color: rgb(11 11 13 / .18); color: var(--paper-ink); }
-.rail-more { display: block; margin-top: 8px; padding-left: 4px; }
+.rail-more { display: block; margin: 6px 0 2px; padding-left: 8px; }
 
 .reader { padding: 30px 34px 34px; min-height: 320px; }
 .reader-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 18px; }
@@ -304,16 +333,52 @@ html:not([data-field]) body::before {
 
 /* ------------------------------------------------------------ motion: alive, and its calm equivalent */
 @keyframes rise-in { from { opacity: 0; transform: translateY(16px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0); } }
+@keyframes arrive { from { opacity: 0; transform: translateY(18px); } }
+@keyframes drop { 0% { transform: none; opacity: 1; } 42% { transform: translateY(16px); opacity: 0; } 43% { transform: translateY(-16px); opacity: 0; } 100% { transform: none; opacity: 1; } }
+@keyframes progress { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+@keyframes cloud-par { to { translate: 0 90px; } }
+@keyframes bloom-scroll { from { transform: rotate(-40deg); } to { transform: rotate(50deg); } }
 @keyframes bloom { to { transform: rotate(45deg); } }   /* eight petals: 45 degrees is one whole turn of the pattern, so it never seems to reset */
 @keyframes drift { to { transform: translateX(-18px) scale(1.05); } }
 @keyframes swap { from { opacity: 0; transform: translateY(10px); } }
 
-html[data-motion=alive] .rise { animation: rise-in .8s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 90ms + 60ms); }
-html[data-motion=alive] .reveal { opacity: 0; transform: translateY(18px); }
-html[data-motion=alive] .reveal.in { opacity: 1; transform: none; transition: opacity .7s var(--ease-out), transform .8s var(--ease-out); transition-delay: calc(var(--i, 0) * 70ms); }
+html[data-motion=alive] .rise { animation: rise-in .8s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 90ms + 60ms); }
+html[data-motion=alive] .reveal:not(.in) { opacity: 0; transform: translateY(18px); }
+html[data-motion=alive] .reveal.in { animation: arrive .8s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 70ms); }
 html[data-motion=alive] .faq-art img { animation: bloom 24s linear infinite; }
 html[data-motion=alive] .hero-shot .cloud { animation: drift 26s ease-in-out infinite alternate; }
 html[data-motion=alive] .swap { animation: swap .5s var(--ease-out) both; }
+
+/* the notes of a version arrive line by line (a short stagger, capped: it must never make reading wait) */
+html[data-motion=alive] .notes-body.stagger :is(h4, p, li) { animation: swap .5s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 38ms + 120ms); }
+
+/* the picture in the first tile is developed from the top, like a print coming up in the tray */
+html[data-motion=alive] .tile-a:not(.in) figure { clip-path: inset(0 0 100% 0); }
+html[data-motion=alive] .tile-a.in figure { clip-path: inset(0); transition: clip-path 1s cubic-bezier(.77, 0, .175, 1) .35s; }
+/* and the tear under "algo se rompió" glitches once as the tile arrives */
+html[data-motion=alive] .tile-c.in::after { animation: tear .26s steps(1, end) .55s 1; }
+
+@media (hover: hover) and (pointer: fine) { html[data-motion=alive] .hero-title:hover .line { animation: split .26s steps(1, end) 1; } }
+
+/* the answers of the questions open and close smoothly where the browser can animate to "auto" (it is instant elsewhere) */
+@supports (interpolate-size: allow-keywords) and selector(::details-content) {
+    html[data-motion=alive] { interpolate-size: allow-keywords; }
+    html[data-motion=alive] .q::details-content { block-size: 0; overflow: clip; transition: block-size .25s var(--ease-out), content-visibility .25s allow-discrete; }
+    html[data-motion=alive] .q[open]::details-content { block-size: auto; transition-duration: .45s; }
+}
+html[data-motion=alive] .q[open] p { animation: swap .45s var(--ease-out) .05s backwards; }
+
+/* depth tied to the scroll (no listeners: the browser does it), only where it can */
+.progress { display: none; }
+@supports (animation-timeline: scroll()) {
+    html[data-motion=alive] .topbar > .progress {
+        display: block; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; pointer-events: none;
+        background: radial-gradient(circle, var(--text) 1px, transparent 1.4px) 0 0 / 7px 3px repeat-x;
+        animation: progress linear both; animation-timeline: scroll(root);
+    }
+    html[data-motion=alive] .hero-shot .cloud { animation: drift 26s ease-in-out infinite alternate, cloud-par linear both; animation-timeline: auto, scroll(root); animation-range: normal, 0 90vh; }
+    html[data-motion=alive] .faq-art img { animation: bloom-scroll linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+}
 
 html[data-motion=calm] .skel, html[data-motion=calm] .skel-line, html[data-motion=calm] .rail-skel, html[data-motion=calm] .reader-skel i { animation: none; }
 html[data-motion=calm] *, html[data-motion=calm] *::before, html[data-motion=calm] *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
@@ -326,8 +391,8 @@ html[data-motion=calm] *, html[data-motion=calm] *::before, html[data-motion=cal
     .hero-shot .cloud { right: -3%; top: -12%; width: 58%; }
     .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .notes-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-    .rail { position: static; flex-direction: row; overflow-x: auto; gap: 8px; padding-bottom: 6px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
-    .rail-item { width: auto; flex: none; grid-template-columns: auto; gap: 2px; padding: 10px 18px; border-radius: 999px; scroll-snap-align: start; }
+    .rail { position: relative; top: auto; flex-direction: row; padding: 0; background: none; border: 0; border-radius: 0; box-shadow: none; overflow-x: auto; gap: 8px; padding-bottom: 6px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+    .rail-item { background: rgb(17 18 21 / .88); width: auto; flex: none; grid-template-columns: auto; gap: 2px; padding: 10px 18px; border-radius: 999px; scroll-snap-align: start; }
     .rail-item .rc { display: none; }
     .rail-skel { flex: none; width: 120px; height: 52px; border-radius: 999px; }
     .bento { grid-template-columns: minmax(0, 1fr); }
