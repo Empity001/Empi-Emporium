@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Empi Launcher, descarga y novedades</title>
+    <meta name="description" content="Descarga Empi Launcher para Windows y mira qué trae cada versión.">
+    <meta name="theme-color" content="#0b0b0d">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Empi Launcher">
+    <meta property="og:description" content="Descarga Empi Launcher para Windows y mira qué trae cada versión.">
+    <meta property="og:image" content="https://empity001.github.io/Empi-Emporium/img/launcher-home.webp">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="fonts/Doto.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Decides "vivo" or "tranquilo" before the first paint, so nothing flashes: the visitor's own choice, else the system's reduced-motion setting. -->
+    <script>try { var m = localStorage.getItem('empi.motion'); document.documentElement.dataset.motion = (m ? m === 'alive' : !matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'alive' : 'calm' } catch (e) { document.documentElement.dataset.motion = 'alive' }</script>
+</head>
+<body>
+    <a class="skip" href="#descarga">Ir al contenido</a>
+    <canvas id="life" aria-hidden="true"></canvas>
+
+    <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="Empi Emporium, inicio">
+            <!-- a dot-matrix E; one row slipped sideways, one dot lit -->
+            <svg class="logo" viewBox="0 0 20 28" aria-hidden="true" fill="currentColor">
+                <g><circle cx="2" cy="2" r="1.6"/><circle cx="6" cy="2" r="1.6"/><circle cx="10" cy="2" r="1.6"/><circle cx="14" cy="2" r="1.6"/><circle cx="18" cy="2" r="1.6"/>
+                <circle cx="2" cy="6" r="1.6"/><circle cx="2" cy="10" r="1.6"/>
+                <circle cx="2" cy="14" r="1.6"/><circle cx="6" cy="14" r="1.6"/><circle cx="10" cy="14" r="1.6"/><circle cx="14" cy="14" r="1.6"/>
+                <circle cx="2" cy="18" r="1.6"/><circle cx="2" cy="22" r="1.6"/>
+                <circle cx="2" cy="26" r="1.6"/><circle cx="6" cy="26" r="1.6"/><circle cx="10" cy="26" r="1.6"/><circle cx="14" cy="26" r="1.6"/></g>
+                <circle cx="18" cy="26" r="1.6" fill="#ff3d8b"/>
+            </svg>
+            <span>Empi Emporium</span>
+        </a>
+        <nav class="nav" aria-label="Secciones">
+            <a href="#novedades">Novedades</a>
+            <a href="#preguntas">Preguntas</a>
+        </nav>
+        <a class="icon-btn" href="https://github.com/Empity001/EmpiLauncher" target="_blank" rel="noopener" aria-label="Código del launcher en GitHub" title="Código en GitHub">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <button class="icon-btn" id="lifeBtn" type="button" aria-pressed="true" aria-label="Movimiento del fondo" title="Movimiento">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2.5-6 5-6 7.5 0s5 6 7.5 0 3.5-4 5-3"/><path d="M2 18c2.5-4 5-4 7.5 0s5 4 7.5 0 3.5-2.5 5-2"/></svg>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero wrap" id="inicio">
+            <div class="hero-copy">
+                <p class="chip rise" style="--i:0">Empi Launcher para Windows</p>
+                <h1 class="hero-title rise" style="--i:1" aria-label="Pulsa Jugar." data-quiet><span class="line">Pulsa</span> <span class="line">Jugar.</span></h1>
+                <p class="hero-sub rise" style="--i:2" data-quiet>Empi Launcher descarga los modpacks de Empi, instala Java y los mantiene al día. Tú solo entras y juegas.</p>
+                <div class="hero-actions rise" style="--i:3">
+                    <a class="btn primary big" data-download href="https://github.com/Empity001/EmpiLauncher/releases/latest">
+                        <svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                        Descargar para Windows
+                    </a>
+                    <a class="btn big" href="#novedades">Ver novedades</a>
+                </div>
+            </div>
+            <figure class="hero-shot rise" style="--i:2">
+                <img class="cloud" src="art/cloud.png" alt="" width="600" height="284">
+                <div class="frame">
+                    <img src="img/launcher-home.webp" width="1280" height="800" alt="Ventana de Empi Launcher: a la izquierda la lista de modpacks, en el centro el modpack CulonesRPG con su banner y abajo el botón Jugar.">
+                </div>
+            </figure>
+        </section>
+
+        <section class="facts wrap reveal" id="descarga" aria-labelledby="factsTitle">
+            <div class="module">
+                <div class="module-head">
+                    <h2 id="factsTitle">Última versión</h2>
+                    <a class="link" id="allReleases" href="https://github.com/Empity001/EmpiLauncher/releases" target="_blank" rel="noopener">Todas las versiones <svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+                </div>
+                <dl class="tiles" id="tiles">
+                    <div class="tile"><dt>Versión</dt><dd class="num" id="factVersion"><i class="skel"></i></dd><small id="factFile" class="skel-line"></small></div>
+                    <div class="tile"><dt>Publicada</dt><dd class="num" id="factDate"><i class="skel"></i></dd><small id="factAgo" class="skel-line"></small></div>
+                    <div class="tile"><dt>Tamaño</dt><dd class="num" id="factSize"><i class="skel"></i></dd><small>Instalador completo</small></div>
+                    <div class="tile"><dt>Sistema</dt><dd class="num">Windows</dd><small>10 y 11, de 64 bits</small></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="notes wrap" id="novedades" aria-labelledby="notesTitle">
+            <h2 class="display reveal" id="notesTitle" data-quiet>Novedades</h2>
+            <div class="notes-grid reveal">
+                <div class="rail" id="rail" data-quiet role="tablist" aria-label="Versiones del launcher" aria-orientation="vertical">
+                    <span class="rail-skel"></span><span class="rail-skel"></span><span class="rail-skel"></span><span class="rail-skel"></span>
+                </div>
+                <article class="reader module" id="reader" role="tabpanel" aria-live="polite" data-quiet>
+                    <div class="reader-skel" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                    <noscript><p>Las novedades necesitan JavaScript. Puedes leerlas en <a href="https://github.com/Empity001/EmpiLauncher/releases" rel="noopener">GitHub</a>.</p></noscript>
+                </article>
+            </div>
+            <p class="source-note" id="sourceNote" hidden></p>
+        </section>
+
+        <section class="what wrap" id="launcher" aria-labelledby="whatTitle">
+            <h2 class="display reveal" id="whatTitle" data-quiet>Qué hace el launcher</h2>
+            <div class="bento">
+                <article class="module tile-a reveal" style="--i:0">
+                    <div class="tile-text" data-quiet>
+                        <h3>Los avisos llegan al launcher</h3>
+                        <p>Avisos, mantenimientos y fechas de estreno de cada modpack se leen dentro del launcher, en páginas a modo de periódico.</p>
+                    </div>
+                    <figure>
+                        <img src="img/launcher-avisos.webp" width="806" height="676" loading="lazy" alt="Panel de avisos del launcher con un aviso de ejemplo: una página con título grande, un mapa y un texto corto.">
+                        <figcaption>Un aviso de ejemplo.</figcaption>
+                    </figure>
+                </article>
+                <article class="module tile-b reveal" style="--i:1">
+                    <div data-quiet>
+                        <h3>Java, mods y actualizaciones solos</h3>
+                        <p>Instala el Java que pide cada modpack, baja los mods y te avisa cuando hay una versión nueva del launcher.</p>
+                    </div>
+                </article>
+                <article class="module tile-c reveal" style="--i:2">
+                    <div data-quiet>
+                        <h3>Si algo falla, se repara</h3>
+                        <p>Verificar y reparar revisa los archivos del modpack y vuelve a bajar solo los dañados. Tus mundos no se tocan.</p>
+                    </div>
+                </article>
+                <article class="module tile-d reveal" style="--i:3">
+                    <div data-quiet>
+                        <h3>Cada modpack, con su estilo</h3>
+                        <p>Cada modpack trae su propio fondo, banner y color, y el launcher los muestra tal cual.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="faq wrap" id="preguntas" aria-labelledby="faqTitle">
+            <div class="faq-list">
+                <h2 class="display reveal" id="faqTitle" data-quiet>Preguntas</h2>
+                <details class="q reveal" style="--i:0" data-quiet>
+                    <summary>¿Es para cualquier modpack?</summary>
+                    <p>No. El launcher lista los modpacks que publica Empi y los descarga y ejecuta. No sirve para crear ni importar otros.</p>
+                </details>
+                <details class="q reveal" style="--i:1" data-quiet>
+                    <summary>Windows me muestra un aviso al instalar</summary>
+                    <p>Puede pasar: el instalador todavía no está firmado con un certificado. En la ventana azul de SmartScreen pulsa Más información y después Ejecutar de todos modos. Si tu Windows tiene Smart App Control activado, puede bloquearlo del todo.</p>
+                </details>
+                <details class="q reveal" style="--i:2" data-quiet>
+                    <summary>¿Tengo que instalar Java?</summary>
+                    <p>No. El launcher instala el Java que necesita cada modpack.</p>
+                </details>
+                <details class="q reveal" style="--i:3" data-quiet>
+                    <summary>¿Cómo inicio sesión?</summary>
+                    <p>Con tu cuenta de Microsoft. El inicio de sesión ocurre en la página de Microsoft: el launcher nunca ve tu contraseña.</p>
+                </details>
+            </div>
+            <div class="faq-art" aria-hidden="true"><img src="art/flower.png" alt="" width="650" height="650" loading="lazy"></div>
+        </section>
+    </main>
+
+    <footer class="foot" id="pie">
+        <div class="wrap foot-grid">
+            <div class="foot-brand" data-quiet>
+                <p class="foot-name">Empi Emporium</p>
+                <p class="foot-line">Aquí se reúne lo que hace Empi.</p>
+            </div>
+            <a class="btn primary big" data-download href="https://github.com/Empity001/EmpiLauncher/releases/latest">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                Descargar para Windows
+            </a>
+            <nav class="foot-links" data-quiet aria-label="Enlaces">
+                <a href="https://github.com/Empity001/EmpiLauncher" target="_blank" rel="noopener">Código del launcher</a>
+                <a href="https://github.com/Empity001/Empi-Emporium" target="_blank" rel="noopener">Código de esta página</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/notes.js" defer></script>
+    <script src="js/field.js" defer></script>
+    <script src="js/site.js" defer></script>
+</body>
+</html>

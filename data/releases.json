@@ -1,0 +1,496 @@
+{
+  "repo": "Empity001/EmpiLauncher",
+  "generatedAt": "2026-09-21T01:51:10.235Z",
+  "releases": [
+    {
+      "tag_name": "v3.5.2",
+      "name": "v3.5.2",
+      "published_at": "2026-09-20T23:50:14Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.5.2",
+      "body": "# Empi Launcher 3.5.3: te avisa de la nueva versión al abrir, verificar y reparar, e informe para soporte\n\n## Launcher\n- La nueva versión se avisa apenas abres el launcher (arriba aparece \"NUEVA VERSIÓN\"), sin tener que entrar a Ajustes. Si al abrir no había internet, vuelve a comprobar a los 15 segundos, al minuto y a los 5 minutos.\n- Nuevo botón \"Verificar y reparar\", bajo los datos del modpack, en el aviso de fallo y en Ajustes > Launcher. Comprueba todos los archivos del modpack y vuelve a bajar solo los que falten o estén dañados. No toca tus mundos, capturas ni ajustes. Al terminar te dice si todo estaba en orden o cuántos archivos reparó.\n- Si Minecraft se cierra con un error, el launcher te ofrece ver un informe, verificar y reparar el modpack o ninguna de las dos.\n- El informe de fallo se ve entero antes de hacer nada. Lleva tu nombre de jugador, tu cuenta, tu equipo (Windows, procesador, memoria, disco), la versión del modpack instalada frente a la publicada, los mods y el final del registro del juego, y un código (EMPI-XXXXXX) para citarlo. Nunca lleva tu sesión, tus claves, tu correo ni tu usuario de Windows.\n- Con el informe puedes copiarlo, guardarlo como archivo .txt o pulsar \"Enviar a soporte para revisión\" (con una nota opcional de qué estabas haciendo). No se envía nada hasta que tú lo pidas.\n- Lo que cierras en \"Ya leídos\" ya no se puede quitar: queda ahí siempre, para que puedas volver a leerlo.\n- Los avisos pueden programarse: un aviso puede empezar a verse en una fecha y hora concretas, según la hora del servidor.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.5.2.exe",
+          "size": 140324726,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.2/Empi-Launcher-setup-3.5.2.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.5.2.exe.blockmap",
+          "size": 147499,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.2/Empi-Launcher-setup-3.5.2.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.2/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.5.1",
+      "name": "v3.5.1",
+      "published_at": "2026-09-20T22:30:25Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.5.1",
+      "body": "# Empi Launcher 3.5.1: los avisos cerrados pasan a \"Ya leídos\"\n## Avisos\n- Al cerrar un aviso ya no se pierde: pasa a la pestaña \"Ya leídos\", donde puedes volver a leerlo, con su botón de enlace si lo tenía. Cada uno dice cuándo lo cerraste.\n- Se guarda comprimido para ocupar muy poco espacio (unos 15 a 25 KB por aviso, un tercio de antes) y el texto se sigue leyendo bien.\n- Con \"Quitar de aquí\" lo borras del todo. Se conservan como máximo los últimos 100.\n- Si el autor quita un aviso que ya cerraste, sigue en \"Ya leídos\". Si lo edita, vuelve a salir como aviso nuevo.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.5.1.exe",
+          "size": 140311535,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.1/Empi-Launcher-setup-3.5.1.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.5.1.exe.blockmap",
+          "size": 147708,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.1/Empi-Launcher-setup-3.5.1.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.1/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.5.0",
+      "name": "v3.5.0",
+      "published_at": "2026-09-20T21:06:46Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.5.0",
+      "body": "# Empi Launcher 3.5.0: avisos, mantenimiento y una pantalla de inicio de sesión\r\n\r\n## Avisos (nuevo)\r\n- Un megáfono arriba a la derecha guarda los avisos generales y una burbuja junto al nombre de cada modpack los avisos de ese modpack. Un globo de color con número marca los que no has leído; el color es el del más serio.\r\n- Al abrir el launcher sale un aviso breve con lo que tienes sin leer. Se abre con un clic y se va solo a los 5 segundos.\r\n- Cada aviso es una página de periódico. Puedes cerrarlo o dejarlo para más tarde, y vuelve la próxima vez que abras el launcher.\r\n- En la lista de modpacks, un punto de color marca los que tienen avisos por leer.\r\n\r\n## Mantenimiento, próximamente y retirado (nuevo)\r\n- Mantenimiento: un sello cae sobre el botón de Jugar, sin jugar ni actualizar, con el mensaje del autor y la hora a la que vuelve. Termina solo, y el autor puede dejar pasar a cuentas concretas.\r\n- Próximamente: el modpack ya se ve, pero no se puede jugar hasta su fecha.\r\n- Retirado: el botón de Jugar se rompe como un cristal con la palabra RETIRADO. Si vuelve a estar disponible, el cristal se regenera solo.\r\n- Un modpack retirado tiene una papelera junto al engranaje para quitarlo de tu PC. Tus mundos y capturas se conservan si quieres.\r\n- Un enlace de Novedades en cada modpack (y uno general) lleva a donde el autor cuenta qué cambió.\r\n- Si el autor pide una versión mínima del launcher, las versiones más viejas piden actualizar antes de jugar.\r\n\r\n## Cuentas\r\n- Nueva pantalla de inicio de sesión. Ajustes > Cuenta solo cambia rápido entre cuentas guardadas y tiene un botón Cerrar sesión que no borra nada.\r\n- Desde la pantalla de inicio de sesión puedes entrar a cualquier cuenta guardada, eliminar una sesión (Microsoft, Mojang o sin conexión), añadir una cuenta Microsoft o jugar sin conexión.\r\n- Cerrar la ventana de Microsoft con la X al salir de una sesión ya cuenta como terminar; antes la cuenta se quedaba.\r\n\r\n## Informe de fallo\r\n- Si Minecraft se cierra con un error, el launcher te ofrece copiar un informe con versiones, Java, memoria, mods y el final del registro. También está en Ajustes > Launcher.\r\n- El informe no se envía a ningún sitio y no incluye tu nombre, tu sesión ni tus rutas de usuario.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.5.0.exe",
+          "size": 140306030,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.0/Empi-Launcher-setup-3.5.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.5.0.exe.blockmap",
+          "size": 148349,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.0/Empi-Launcher-setup-3.5.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.4.0",
+      "name": "v3.4.0",
+      "published_at": "2026-09-20T00:32:41Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.4.0",
+      "body": "# Empi Launcher 3.4.0: perfiles dentro de cada modpack y un instalador que ya no falla en Program Files\r\n\r\n## Perfiles (nuevo)\r\n- Un modpack ahora puede tener perfiles: otras versiones que su autor enlaza dentro de él. Ya no salen como una versión más en la lista; aparecen en un desplegable pequeño junto al nombre del modpack (el chip \"PERFIL\").\r\n- Eliges el perfil con un clic. Cada perfil es una versión completa, con sus propios mods, su memoria, su Java y, si hace falta, otra versión de Minecraft u otro loader. Se instala la primera vez que le das a Jugar.\r\n- Cada perfil tiene su nombre y su descripción, y el launcher marca \"Recomendado para tu PC\" el que el autor pensó para equipos con poca memoria.\r\n- El modpack conserva su nombre, su imagen y su color; cambian la versión, el estado, la memoria y el botón de jugar, que son los del perfil elegido. Si cambias de modpack y vuelves, sigues en el perfil que tenías.\r\n\r\n## Instalador\r\n- Si tenías el launcher clásico instalado \"para todos los usuarios\" (en Program Files), el instalador fallaba archivo por archivo (\"Error abriendo archivo para escritura\") y te dejaba sin launcher. Ahora, si esa carpeta no se puede escribir sin ser administrador, instala en tu usuario (AppData\\Local\\Programs\\Empi Launcher) y te lo avisa.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.4.0.exe",
+          "size": 140274335,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.4.0/Empi-Launcher-setup-3.4.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.4.0.exe.blockmap",
+          "size": 146220,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.4.0/Empi-Launcher-setup-3.4.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.4.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.3.0",
+      "name": "v3.3.0",
+      "published_at": "2026-09-19T18:04:47Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.3.0",
+      "body": "# Empi Launcher 3.3.0: logo animado, interfaz que responde y un fondo a tu gusto\n\n## Logo al abrir y cerrar (nuevo)\n- Al abrir, el logo se arma punto a punto con un efecto glitch, sobre las nubes de puntos, y descubre el launcher. Al cerrar, se deshace en medio segundo.\n- Un clic o una tecla lo salta. Se puede apagar en Ajustes → Launcher → \"Animación del logo\".\n- No aparece si tienes las animaciones de Windows desactivadas, y nunca retrasa un cierre por actualización ni el apagado del equipo.\n\n## Una interfaz que responde\n- Botones, tarjetas, pestañas, interruptores y campos de texto reaccionan al puntero y al clic con transiciones suaves y cortas.\n- Las pantallas, los diálogos y los avisos llegan con movimiento en vez de aparecer de golpe; la barra de progreso se desliza en lugar de saltar.\n- Al elegir otro modpack, su nombre se rasga con el mismo glitch y la lista se actualiza sin reconstruirse.\n- Con las animaciones de Windows apagadas, todo queda casi instantáneo.\n\n## Fondo de puntos\n- Nuevo deslizador \"Intensidad del fondo\" (10 a 100 %) en Ajustes → Launcher: bájalo si lo quieres más calmado.\n- Las nubes aparecen detrás del progreso de descargas y actualizaciones, y avanzan con el progreso real.\n- Se quita un texto de la pestaña Launcher que ya no hacía falta.\n\n## Memoria por modpack\n- Quien publica un modpack puede fijar la RAM mínima y máxima con la que empiezas. Puedes cambiarla después en Ajustes → Java.\n- Si el autor la cambia, la recibes una sola vez. Nunca se pasa de lo que da tu equipo.\n\n## Arreglos\n- El launcher ya no se queda en \"Comprobando Java...\" si Windows tarda en encontrar Java: prueba primero los sitios habituales, salta un Java que no responde y, si no encuentra ninguno, te ofrece instalarlo.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.3.0.exe",
+          "size": 140196389,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.3.0/Empi-Launcher-setup-3.3.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.3.0.exe.blockmap",
+          "size": 147517,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.3.0/Empi-Launcher-setup-3.3.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.3.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.2.0",
+      "name": "v3.2.0",
+      "published_at": "2026-09-19T13:14:15Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.2.0",
+      "body": "## Empi Launcher 3.1.0: skins sin conexión, historial de novedades y un fondo más vivo\n\n### Skin para jugar sin conexión (nuevo)\n- En **Ajustes → Cuenta**, el jugador sin conexión tiene ahora el botón **Skin**. Pegas el **id** de una skin de NameMC (por ejemplo `96cab59a8709ce31`) o su **enlace**, ves cómo queda y pulsas \"Usar esta skin\".\n- Si ya tienes un id o un enlace de NameMC en el portapapeles, el launcher lo recoge solo. También hay un botón para abrir NameMC y elegir una skin.\n- La skin se descarga una sola vez y se comprueba antes de usarla. Detecta el modelo (normal o fino) y también se ve en la cabeza del avatar.\n- Solo se activa si juegas sin conexión y no gasta nada mientras no juegas. Se puede quitar cuando quieras.\n- La ves tú en tu partida (un jugador o servidores sin verificación de cuenta). Los demás jugadores no la ven.\n- La primera vez que eliges una skin se descarga un pequeño componente (350 KB) que la muestra en el juego, por lo que hace falta internet ese día.\n- Funciona con cualquier versión de Minecraft y con Forge, NeoForge y Fabric. Está comprobada con el sistema de skins real de las versiones 1.8.9, 1.12.2, 1.16.5, 1.18.2, 1.19.4, 1.20.1, 1.20.4, 1.21.1 y 1.21.11.\n\n### Pestaña \"Launcher\" con todas las novedades\n- \"Acerca\" ahora se llama **Launcher**.\n- Muestra las notas de **todas** las versiones desde la que tienes hasta la última, de la más nueva a la más antigua, con su fecha y un enlace a GitHub. Si te saltaste varias versiones, las lees todas.\n- Sigue teniendo la versión instalada, el botón **Buscar actualizaciones** y los ajustes del launcher.\n\n### Fondo vivo\n- **Color de los puntos a tu elección.** En Launcher → Fondo vivo eliges un color de la lista o creas el tuyo con un **selector de color propio** del launcher (cuadro de saturación y brillo, barra de tono y código hex). Cuando una onda del color del modpack se cruza con la tuya, los puntos se mezclan.\n- **Ondas de clic más naturales.** Ahora recorren toda la ventana hasta el borde: salen rápidas, frenan como el agua, se debilitan al extenderse y dejan estela. Ya no desaparecen a mitad de camino.\n- **Siempre presentes.** El fondo, sus ondas y su respiración siguen mientras descargas o actualizas. Solo se queda quieto si lo apagas, si Minecraft está abierto, si hay poca memoria o si activas el modo de rendimiento.\n- Los botones de minimizar, maximizar y cerrar están ahora dentro de una **cajita** para que se distingan bien del fondo.\n\n### Publisher\n- El fondo tiene el mismo comportamiento de ondas y de mezcla de colores que el launcher.\n- En **Ajustes** hay una opción para elegir el color de los puntos, con el mismo selector de color propio (se guarda en ese navegador).\n\n### Notas\n- Las skins se comprobaron con el sistema de skins real de cada versión (desde la 1.8.9 hasta la 1.21.11), pero sin abrir una partida completa. Si a alguien no le sale la skin, que lo avise.\n- Los instaladores siguen sin firma de código. Si Windows los bloquea, usa \"Ejecutar de todos modos\".",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.2.0.AppImage",
+          "size": 109842894,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.2.0/Empi-Launcher-setup-3.2.0.AppImage"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.2.0.exe",
+          "size": 140128235,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.2.0/Empi-Launcher-setup-3.2.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.2.0.exe.blockmap",
+          "size": 147627,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.2.0/Empi-Launcher-setup-3.2.0.exe.blockmap"
+        },
+        {
+          "name": "latest-linux.yml",
+          "size": 390,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.2.0/latest-linux.yml"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.2.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.0.0",
+      "name": "v3.0.0",
+      "published_at": "2026-09-19T11:44:19Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.0.0",
+      "body": "## Empi Launcher 3.0.0: launcher nuevo, más ligero\n\n**Cambio grande:** el launcher ahora es una aplicación nativa de Windows. Ya no lleva un navegador (Electron) abierto todo el tiempo.\n\nSi tienes el launcher anterior, esta actualización lo **reemplaza automáticamente**: se instala el nuevo y se quita el viejo. Tus cuentas, ajustes, mods e instancias se conservan.\n\n### Más ligero\n- Nueva interfaz nativa de Windows, con mucho menos consumo de memoria. En una prueba en reposo usó unos 41 MB de memoria privada, frente a unos 132 MB del launcher anterior.\n- La lógica de descarga, verificación y lanzamiento sigue siendo la del launcher clásico, así que el comportamiento del juego no cambia.\n- La ventana de inicio de sesión de Microsoft solo existe mientras la usas.\n\n### Jugar sin conexión (nuevo)\n- Debajo de \"Iniciar sesión\" hay una opción nueva, **\"Iniciar sin conexión\"**, para jugar sin cuenta o sin internet.\n- Eliges un nombre, sin skin. Cada nombre tiene un **identificador fijo de 12 dígitos**: el mismo nombre siempre da el mismo, sin depender de la fecha, el servidor ni el azar.\n- Se puede usar, renombrar o quitar desde Ajustes → Cuenta.\n- Sirve para un jugador y para servidores que no verifican la cuenta.\n- Sin internet ya no se borra tu sesión de Microsoft al abrir el launcher.\n\n### Actualizaciones\n- Botón de versión nueva: descarga, comprueba y se instala solo, con barra de progreso y opción de cancelar.\n- Acerca muestra la versión instalada y tiene **\"Buscar actualizaciones\"**.\n\n### Pantalla principal y ajustes\n- Cada modpack muestra su **logo y fondo** propios.\n- **Fondo vivo** de puntos que reacciona al ratón: olas al hacer clic y contorno al pasar sobre los elementos.\n  - Solo se mueve cuando es barato: se queda quieto durante descargas, con Minecraft abierto o en equipos justos.\n  - Se elige en Acerca: Automático, Siempre o Apagado.\n- Estado del servidor con jugadores conectados, bandeja del sistema mientras juegas y avisos de versión nueva.\n- Ajustes rehechos: Cuenta, Minecraft, Mods (opcionales y propios), Java (RAM, ruta y JVM), Capturas con visor y Acerca.\n- Arreglado un error que impedía abrir Ajustes → Cuenta.\n\n### Minecraft y modpacks\n- **NeoForge 21.11**: el juego ya arranca (los jars de NeoForge y Minecraft se mantienen fuera del classpath, como exige FML 10).\n- La comprobación de integridad recuerda los mods que se sincronizan al iniciar, así que ya no marca mods \"añadidos\" por error.\n\n### Nota importante\nLos instaladores no están firmados. Si Windows los bloquea (por ejemplo con Smart App Control), usa \"Ejecutar de todos modos\" o descárgalo desde esta página.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.0.0.exe",
+          "size": 140100119,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.0.0/Empi-Launcher-setup-3.0.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.0.0.exe.blockmap",
+          "size": 147497,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.0.0/Empi-Launcher-setup-3.0.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.0.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.6.2",
+      "name": "v2.6.2",
+      "published_at": "2026-09-18T20:25:48Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.6.2",
+      "body": "v2.6.2",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.6.2.exe",
+          "size": 115465260,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.6.2/Empi-Launcher-setup-2.6.2.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.6.2.exe.blockmap",
+          "size": 120743,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.6.2/Empi-Launcher-setup-2.6.2.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.6.2/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.6.0",
+      "name": "v2.6.0",
+      "published_at": "2026-09-18T18:54:01Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.6.0",
+      "body": "v2.6.0",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.6.0.exe",
+          "size": 115461288,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.6.0/Empi-Launcher-setup-2.6.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.6.0.exe.blockmap",
+          "size": 120844,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.6.0/Empi-Launcher-setup-2.6.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.6.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.5.0",
+      "name": "2.5.0",
+      "published_at": "2026-08-04T19:34:53Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.5.0",
+      "body": "- Mejor optimizacion del launcher\r\n- Ahora se puede colocar como minimo 512mb de RAM dedicadas al mc\r\n- Estado de ahorro de RAM automatico al momento de tenemer menos de 6gb de ram\r\n- Boton para reducir de forma manual el consumo de RAM del launcher (esto implica remover elementos graficos)",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.5.0.exe",
+          "size": 109141957,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.5.0/Empi-Launcher-setup-2.5.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.5.0.exe.blockmap",
+          "size": 115350,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.5.0/Empi-Launcher-setup-2.5.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.5.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.4.3",
+      "name": "2.4.3",
+      "published_at": "2026-07-24T19:20:19Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.4.3",
+      "body": "- Optimizacion de ram\r\n- Integracion del launcher en segundo plano\r\n- Integracion de apartado de screenshots",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.4.3.exe",
+          "size": 360087584,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.3/Empi-Launcher-setup-2.4.3.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.4.3.exe.blockmap",
+          "size": 376023,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.3/Empi-Launcher-setup-2.4.3.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.3/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.4.2",
+      "name": "2.4.2",
+      "published_at": "2026-07-23T15:39:21Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.4.2",
+      "body": "- Arrglo a la distribucion de restauracion de archivos",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.4.2.exe",
+          "size": 109129445,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.2/Empi-Launcher-setup-2.4.2.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.4.2.exe.blockmap",
+          "size": 115235,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.2/Empi-Launcher-setup-2.4.2.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.2/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.4.1",
+      "name": "2.4.1",
+      "published_at": "2026-07-23T13:36:24Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.4.1",
+      "body": "- Arreglo de la restauracion de archivos",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.4.1.exe",
+          "size": 109128248,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.1/Empi-Launcher-setup-2.4.1.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.4.1.exe.blockmap",
+          "size": 115231,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.1/Empi-Launcher-setup-2.4.1.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.1/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.4.0",
+      "name": "2.4.0",
+      "published_at": "2026-07-23T04:32:03Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.4.0",
+      "body": "- Areglo del cache\r\n- Verificacion de launcher con Mod y Plugin incluido (Vienen aparte)\r\n- Reorganizacion de intancias y ubicacion del launcher\r\n- Bloqueo a la modificacion de archivos conprometidos del launcher\r\n",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.4.0.exe",
+          "size": 109127247,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.0/Empi-Launcher-setup-2.4.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.4.0.exe.blockmap",
+          "size": 115240,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.0/Empi-Launcher-setup-2.4.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.4.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.3.4",
+      "name": "2.3.4",
+      "published_at": "2026-07-22T04:16:07Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.3.4",
+      "body": "- Implementacion de actividad de discord - face 1\r\n- Areglo de lag y baja tasa de refresco",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.3.4.exe",
+          "size": 109123460,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.4/Empi-Launcher-setup-2.3.4.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.3.4.exe.blockmap",
+          "size": 115135,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.4/Empi-Launcher-setup-2.3.4.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.4/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.3.3",
+      "name": "2.3.3",
+      "published_at": "2026-07-22T01:06:38Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.3.3",
+      "body": "- Se agregaron botones que indican si el modpack esta desactualizada. Tambien un boton de detener y se cambiaron algunas posiciones de estos mismos.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.3.3.exe",
+          "size": 109116985,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.3/Empi-Launcher-setup-2.3.3.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.3.3.exe.blockmap",
+          "size": 115415,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.3/Empi-Launcher-setup-2.3.3.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.3/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.3.2",
+      "name": "2.3.2",
+      "published_at": "2026-07-21T23:06:02Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.3.2",
+      "body": "- Reorganizacion del apartado de ajustes",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.3.2.exe",
+          "size": 120947356,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.2/Empi-Launcher-setup-2.3.2.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.3.2.exe.blockmap",
+          "size": 126837,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.2/Empi-Launcher-setup-2.3.2.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.2/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.3.1",
+      "name": "2.3.1",
+      "published_at": "2026-07-21T21:37:44Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.3.1",
+      "body": "- Modificacion de texto al iniciar el launcher\r\n- Boton de actualizacion rediseñado",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.3.1.exe",
+          "size": 109110110,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.1/Empi-Launcher-setup-2.3.1.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.3.1.exe.blockmap",
+          "size": 115190,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.1/Empi-Launcher-setup-2.3.1.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.1/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.3.0",
+      "name": "2.3.0",
+      "published_at": "2026-07-21T21:01:48Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.3.0",
+      "body": "Esta veresion agrego muchos cambios visuales:\r\n\r\n- Cambio de la UI en general, con un estilo mas moderno y de cajas, siendo mas agradable a la vista.\r\n- Recolocacion de las versiones; Estas estaban algo escondidas al lado del boton de jugar. Ahora se ecuentran en la parte izquierda mostrandose en todo momento\r\n- Recolocacion de botones y cajas de texto en general: Movilice el boton jugar al centro, tanto el estado del server como el de la cuenta de mojan fueron movidos.\r\n- Se agregaron fondos y textos animados en pantalla, si la instancia lo amerita pues se colocan\r\n- Eliminacion del apartado de novedades\r\n ",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.3.0.exe",
+          "size": 109107516,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.0/Empi-Launcher-setup-2.3.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.3.0.exe.blockmap",
+          "size": 115342,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.0/Empi-Launcher-setup-2.3.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.3.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v2.2.2",
+      "name": "2.2.2",
+      "published_at": "2026-07-21T15:05:13Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v2.2.2",
+      "body": "",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-2.2.2.exe",
+          "size": 109094215,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.2.2/Empi-Launcher-setup-2.2.2.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-2.2.2.exe.blockmap",
+          "size": 115251,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.2.2/Empi-Launcher-setup-2.2.2.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v2.2.2/latest.yml"
+        }
+      ]
+    }
+  ]
+}

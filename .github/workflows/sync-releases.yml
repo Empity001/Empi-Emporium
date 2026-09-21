@@ -1,0 +1,40 @@
+name: Copiar los releases del launcher
+
+# The page asks GitHub for the latest release live, so it is always current without this. This only refreshes data/releases.json,
+# the copy it falls back to when GitHub cannot be reached from a visitor's browser. It runs every three hours, and by hand from the
+# Actions tab ("Run workflow"), and it commits only when the releases actually changed.
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [launcher-release]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-releases
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Guardar los releases
+        run: node scripts/sync-releases.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Subir el cambio, si lo hay
+        run: |
+          if [ -n "$(git status --porcelain data/releases.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/releases.json
+            git commit -m "Copia de los releases del launcher"
+            git push
+          fi
