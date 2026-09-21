@@ -1,7 +1,55 @@
 {
   "repo": "Empity001/EmpiLauncher",
-  "generatedAt": "2026-09-21T01:51:10.235Z",
+  "generatedAt": "2026-09-21T08:54:38.166Z",
   "releases": [
+    {
+      "tag_name": "v3.6.0",
+      "name": "v3.6.0",
+      "published_at": "2026-09-21T06:08:57Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.6.0",
+      "body": "# Empi Launcher 3.6.0: el Java correcto para cada modpack, solo o cuando quieras\n\n## Java (nuevo)\n- Si a un modpack le falta su Java, el launcher lo instala solo al pulsar Jugar: exactamente la versión que pide ese modpack (por ejemplo Java 25), sin preguntarte antes. El progreso se ve en el botón.\n- Nueva sección en Ajustes > Java: te dice qué Java pide el modpack y cuál usa ahora, con un botón para instalarlo, usar el que ya hay en tu equipo o buscar una actualización de esa misma versión. Si ya tienes uno que sirve, lo usa sin bajar nada.\n- Nuevo interruptor \"Instalar Java automáticamente\" en la misma sección, por si prefieres que el launcher te pregunte antes.\n- El archivo que se descarga de Java ya no se queda ocupando disco (unos 200 MB), y al actualizar se borran las copias viejas de esa misma versión.\n\n## Arreglos\n- Los modpacks de Minecraft 26 o más nuevo (como Fast Version) pedían Java 21 cuando en realidad necesitan Java 25, y por eso no abrían. Ahora el launcher sabe qué Java pide cada versión de Minecraft cuando el modpack no lo dice.\n- El modpack principal sale siempre primero en la lista, arriba del todo, y es el que se abre la primera vez.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.6.0.exe",
+          "size": 140341949,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.0/Empi-Launcher-setup-3.6.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.6.0.exe.blockmap",
+          "size": 148054,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.0/Empi-Launcher-setup-3.6.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.5.3",
+      "name": "v3.5.3",
+      "published_at": "2026-09-21T02:14:34Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.5.3",
+      "body": "# Empi Launcher 3.5.3: los banners y fondos animados ya se mueven\n\n## Banner y fondo animados (nuevo)\n- Los modpacks con un banner o un fondo animado (GIF, WebP animado o APNG) ahora se ven en movimiento, con las repeticiones que traiga cada imagen. Antes solo se veía el primer cuadro, así que el banner en GIF de CulonesRPG se quedaba quieto.\n- La primera vez que abres un modpack con animación, el launcher la prepara en segundo plano. Tarda unos segundos, una sola vez: mientras tanto ves la imagen quieta y después empieza a moverse sola. Queda guardada en tu equipo y no se vuelve a preparar.\n- Se mueve solo mientras el launcher está a la vista: con la ventana al frente, sin minimizar y con las animaciones de Windows encendidas. Si no, se pausa donde estaba y sigue cuando vuelves. En las pruebas, un banner en movimiento gastó alrededor del 10 % de un núcleo del procesador.\n- Nuevo interruptor en Ajustes > Launcher, \"Banner y fondo animados\". Apagado, todo se queda quieto y el launcher no prepara nada.\n- Una animación que pese más de 16 MB se queda quieta, para no gastar disco ni memoria de más.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.5.3.exe",
+          "size": 140330402,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.3/Empi-Launcher-setup-3.5.3.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.5.3.exe.blockmap",
+          "size": 147968,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.3/Empi-Launcher-setup-3.5.3.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.5.3/latest.yml"
+        }
+      ]
+    },
     {
       "tag_name": "v3.5.2",
       "name": "v3.5.2",
