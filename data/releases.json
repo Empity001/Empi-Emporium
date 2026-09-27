@@ -1,7 +1,31 @@
 {
   "repo": "Empity001/EmpiLauncher",
-  "generatedAt": "2026-09-21T08:54:38.166Z",
+  "generatedAt": "2026-09-27T16:57:11.817Z",
   "releases": [
+    {
+      "tag_name": "v3.6.1",
+      "name": "v3.6.1",
+      "published_at": "2026-09-27T16:42:00Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.6.1",
+      "body": "# Empi Launcher 3.6.1: Java por modpack, de verdad, y Connector arreglado\n\n## Arreglos\n- El \"techo\" que le faltaba a cada franja de Java: si ya tenías un Java 25 instalado (de un modpack de Minecraft 26 o más nuevo), el launcher lo reutilizaba también en modpacks que pedían Java 21 o Java 17, y eso los rompía. Ahora cada franja tiene su límite y no se cuela un Java de otro modpack.\n- Modpacks que usan Connector (el que deja correr mods de Fabric sobre Forge) fallaban con \"connectormod is not installed\" aunque el mod estuviera ahí. Ya cargan bien.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.6.1.exe",
+          "size": 140340638,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.1/Empi-Launcher-setup-3.6.1.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.6.1.exe.blockmap",
+          "size": 147515,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.1/Empi-Launcher-setup-3.6.1.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.1/latest.yml"
+        }
+      ]
+    },
     {
       "tag_name": "v3.6.0",
       "name": "v3.6.0",
