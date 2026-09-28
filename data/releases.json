@@ -1,7 +1,31 @@
 {
   "repo": "Empity001/EmpiLauncher",
-  "generatedAt": "2026-09-27T16:57:11.817Z",
+  "generatedAt": "2026-09-28T05:21:41.376Z",
   "releases": [
+    {
+      "tag_name": "v3.6.2",
+      "name": "v3.6.2",
+      "published_at": "2026-09-27T21:47:45Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.6.2",
+      "body": "# Empi Launcher 3.6.2: NeoForge arreglado de verdad\n\n## Arreglos\n- Modpacks de NeoForge (como TR world project) fallaban con \"neoforge is not installed\" en decenas de mods a la vez, aunque tuvieras el Java correcto. El propio launcher metía el archivo de NeoForge en el classpath por su cuenta, y eso hacía que el buscador real de NeoForge lo descartara por duplicado antes de leerlo. Ya arranca bien.\n",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.6.2.exe",
+          "size": 140333392,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.2/Empi-Launcher-setup-3.6.2.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.6.2.exe.blockmap",
+          "size": 147812,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.2/Empi-Launcher-setup-3.6.2.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.2/latest.yml"
+        }
+      ]
+    },
     {
       "tag_name": "v3.6.1",
       "name": "v3.6.1",
