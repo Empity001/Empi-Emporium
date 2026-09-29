@@ -1,7 +1,55 @@
 {
   "repo": "Empity001/EmpiLauncher",
-  "generatedAt": "2026-09-28T05:21:41.376Z",
+  "generatedAt": "2026-09-29T09:47:46.677Z",
   "releases": [
+    {
+      "tag_name": "v3.7.0",
+      "name": "v3.7.0",
+      "published_at": "2026-09-29T04:51:46Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.7.0",
+      "body": "# Empi Launcher 3.7.0: nuevo estilo Celestial\n\n## Estilos (nuevo)\n- Nuevo estilo **Celestial**: el fondo se vuelve holográfico, con brillos de colores que se mueven despacio, destellos que parpadean y estrellas de papel metalizado que flotan. Al hacer clic sale un pequeño fuego artificial.\n- Llega como una lluvia de estrellas fugaces desde la esquina de arriba.\n- Cambia toda la interfaz, no solo el fondo: letras, formas y colores siguen al estilo, y los textos se siguen leyendo igual.\n- Se elige en Ajustes > Launcher > Estilo. El cambio es al instante y puedes volver al de siempre cuando quieras.\n- Con \"Usar el color del modpack\" decides si manda el color de cada modpack o el del estilo.\n- Como el fondo de siempre, se queda quieto mientras juegas, si el equipo va justo o si lo apagas en Ajustes.\n\n## También en esta versión\n- Nuevo botón del ojo, arriba a la derecha: esconde toda la interfaz para mirar solo el fondo. Con el ratón quieto unos segundos se van también los botones, y al moverlo vuelven. El ojo, o Esc, trae la interfaz de vuelta.\n- El launcher empieza a contar cuánto juegas cada modpack. Se guarda solo en tu equipo y no se envía a ningún lado.\n- La interfaz gasta menos procesador mientras el fondo se mueve.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.7.0.exe",
+          "size": 140358905,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.7.0/Empi-Launcher-setup-3.7.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.7.0.exe.blockmap",
+          "size": 146995,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.7.0/Empi-Launcher-setup-3.7.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.7.0/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.6.3",
+      "name": "v3.6.3",
+      "published_at": "2026-09-29T01:31:28Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.6.3",
+      "body": "# Empi Launcher 3.6.3: el aviso de actualizacion ya no se esconde\n\n## Mejoras\n- Antes, si habia una actualizacion pendiente, solo aparecia una pastillita chiquita (\"NUEVA VERSION\") que habia que notar. Ahora, apenas se detecta (al abrir el launcher o mientras esta abierto), aparece de una vez el cuadro para instalarla.",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.6.3.exe",
+          "size": 140334274,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.3/Empi-Launcher-setup-3.6.3.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.6.3.exe.blockmap",
+          "size": 147821,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.3/Empi-Launcher-setup-3.6.3.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.6.3/latest.yml"
+        }
+      ]
+    },
     {
       "tag_name": "v3.6.2",
       "name": "v3.6.2",
