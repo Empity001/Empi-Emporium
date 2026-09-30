@@ -1,7 +1,55 @@
 {
   "repo": "Empity001/EmpiLauncher",
-  "generatedAt": "2026-09-29T09:47:46.677Z",
+  "generatedAt": "2026-09-30T05:30:37.203Z",
   "releases": [
+    {
+      "tag_name": "v3.8.1",
+      "name": "v3.8.1",
+      "published_at": "2026-09-30T03:24:01Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.8.1",
+      "body": "# Empi Launcher 3.8.1: Ajustes más ordenaditos\n\n## Pestaña Launcher\n- Ahora va en secciones que abres y cierras: Estilo, Fondo, Launcher, Carpetas, Informe y reparación, Consumo y Depuración. Se quedan como las dejes hasta que vuelvas a abrir el launcher.\n- Versión y novedades se queda hasta arriba, siempre a la vista.\n\n## Depuración\n- Sección nueva con un interruptor por dato, para ver en vivo qué tanto trabaja el launcher: los FPS reales del fondo contra los que le pides, el tiempo por cuadro, el procesador y la memoria de la interfaz y del motor (cada quien por su lado), el uso de la tarjeta gráfica y si el fondo se está moviendo o está quieto (y por qué).\n- Sale en un panelito arriba a la derecha que se actualiza cada segundo. Se esconde cuando ves solo el fondo y mientras juegas.\n- Todo viene apagado. La tarjeta gráfica solo se mide si la prendes, porque medirla cuesta tantito.\n",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.8.1.exe",
+          "size": 140475490,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.8.1/Empi-Launcher-setup-3.8.1.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.8.1.exe.blockmap",
+          "size": 147979,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.8.1/Empi-Launcher-setup-3.8.1.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.8.1/latest.yml"
+        }
+      ]
+    },
+    {
+      "tag_name": "v3.8.0",
+      "name": "v3.8.0",
+      "published_at": "2026-09-30T02:27:50Z",
+      "html_url": "https://github.com/Empity001/EmpiLauncher/releases/tag/v3.8.0",
+      "body": "# Empi Launcher 3.8.0: tú mandas en los FPS\n\n## Fondos más fluidos\n- Los fondos ahora se mueven a los FPS que tú escojas. Antes iban medio a saltitos: en reposo bajaban hasta 8 FPS y el reloj de Windows los frenaba todavía más. Ya no.\n- Nuevo en Ajustes > Launcher > Fondo: con el modo de rendimiento en **Automático** escoges un mínimo (cuando no mueves nada) y un máximo (cuando mueves el ratón o haces clic). En **Desactivado** los fijas tú, y en **Activado** los topo en 15 FPS para que tu compu descanse (antes lo dejaba quieto del todo).\n- Si tu compu no aguanta, en automático le bajo los FPS solito antes de dejar el fondo quieto.\n- Cambiar el modo de rendimiento ahora se aplica al instante, sin salir de Ajustes.\n\n## Estilos\n- El estilo de siempre ahora se llama **Default**. Es el mismo de antes, nomás cambió de nombre.\n- Cada estilo acepta tu propio color: Ajustes > Launcher > Estilo > **Color del estilo**. Manda cuando \"Usar el color del modpack\" está apagado (o el modpack no trae color), y cada estilo se acuerda del suyo.\n- Cada tarjeta de estilo trae un circulito con cuánto pesa (verde, ámbar o rojo), que sube o baja según tus FPS. Arriba hay un aviso: los estilos gastan más que un launcher quieto, así que escoge con cariño.\n- Las tarjetas enseñan una muestrita de cada estilo.\n- Los avisos (el periódico, el globito y el megáfono) ya se visten con el estilo que tengas, aunque lo cambies con el launcher abierto.\n- Celestial: arreglé un error en su brillo, y ahora cuando un modpack entra en mantenimiento, está por salir, se retira o regresa, Jugar lo cuenta a su manera: un eclipse, una constelación con la fecha, una supernova y una lluvia de estrellas.\n\n## Otros\n- \"Ver solo el fondo\": los botones ya no se esconden cuando acercas el ratón al ojo.\n- Todo el launcher habla ahora como yo ;3 Textos, avisos y errores con el mismo tono de la página, y lo importante (tus datos, lo que se borra, los permisos) sigue igual de clarito.\n",
+      "assets": [
+        {
+          "name": "Empi-Launcher-setup-3.8.0.exe",
+          "size": 140455458,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.8.0/Empi-Launcher-setup-3.8.0.exe"
+        },
+        {
+          "name": "Empi-Launcher-setup-3.8.0.exe.blockmap",
+          "size": 146617,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.8.0/Empi-Launcher-setup-3.8.0.exe.blockmap"
+        },
+        {
+          "name": "latest.yml",
+          "size": 355,
+          "browser_download_url": "https://github.com/Empity001/EmpiLauncher/releases/download/v3.8.0/latest.yml"
+        }
+      ]
+    },
     {
       "tag_name": "v3.7.0",
       "name": "v3.7.0",
