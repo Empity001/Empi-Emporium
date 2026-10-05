@@ -27,12 +27,14 @@
             .filter((r) => r && !r.draft && !r.prerelease && r.tag_name)
             .map((r) => {
                 const asset = (r.assets || []).find((a) => /^Empi-Launcher-setup-.+\.exe$/i.test(a.name))
+                const linux = (r.assets || []).find((a) => /^Empi-Launcher-.+-linux-x64\.tar\.gz$/i.test(a.name))
                 return {
                     version: String(r.tag_name).replace(/^v/i, ''),
                     date: r.published_at || null,
                     url: r.html_url || `${RELEASES_PAGE}/tag/${r.tag_name}`,
                     body: String(r.body || ''),
-                    installer: asset ? { name: asset.name, size: asset.size, url: asset.browser_download_url } : null
+                    installer: asset ? { name: asset.name, size: asset.size, url: asset.browser_download_url } : null,
+                    linux: linux ? { name: linux.name, size: linux.size, url: linux.browser_download_url } : null
                 }
             })
             .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
@@ -59,23 +61,48 @@
 
     const sizeMb = (bytes) => `${Math.round(bytes / 1048576)} MB`
 
+    // Which system this visitor is on decides the big button; the other one is offered next to it. The newest Linux package may belong to an
+    // older release than the newest Windows installer (they are published separately), so each system looks for its own.
+    const isLinux = /linux/i.test(navigator.userAgent) && !/android/i.test(navigator.userAgent)
+    const mine = isLinux ? 'linux' : 'windows'
+    const other = isLinux ? 'windows' : 'linux'
+    const NAMES = { windows: 'Windows', linux: 'Linux' }
+    const assetOf = (release, system) => (release ? (system === 'linux' ? release.linux : release.installer) : null)
+    const newestWith = (system) => releases.find((r) => assetOf(r, system)) || null
+
     function setDownload(release) {
-        const href = release && release.installer ? release.installer.url : release ? release.url : `${RELEASES_PAGE}/latest`
-        for (const a of document.querySelectorAll('[data-download]')) a.href = href
+        const own = newestWith(mine)
+        const href = assetOf(own, mine) ? assetOf(own, mine).url : release ? release.url : `${RELEASES_PAGE}/latest`
+        for (const a of document.querySelectorAll('[data-download]')) {
+            a.href = href
+            const l1 = a.querySelector('.l1')
+            if (l1) l1.textContent = `Descargar para ${NAMES[mine]}`
+        }
+        const alt = $('altDownload'), theirs = newestWith(other)
+        if (alt) {
+            alt.hidden = !theirs
+            if (theirs) { alt.href = assetOf(theirs, other).url; alt.textContent = `Descargar para ${NAMES[other]}` }
+        }
     }
 
-    function renderFacts(release) {
+    function renderFacts(latest) {
+        // the facts are those of the file this visitor would get (its release may not be the newest one)
+        const release = newestWith(mine) || latest, asset = assetOf(release, mine)
         const version = $('factVersion'), file = $('factFile'), when = $('factDate'), agoLine = $('factAgo'), size = $('factSize')
         const set = (el, text) => { el.textContent = text; el.classList.remove('skel', 'skel-line') }
         set(version, release.version)
-        set(file, release.installer ? release.installer.name : 'Instalador en GitHub')
+        set(file, asset ? asset.name : 'Instalador en GitHub')
         if (release.date) {
             set(when, date.format(new Date(release.date)))
             const days = Math.round((new Date(release.date) - Date.now()) / 86400000)
             const hours = Math.round((new Date(release.date) - Date.now()) / 3600000)
             set(agoLine, Math.abs(hours) < 24 ? (hours === 0 ? 'Hace un momento' : ago.format(hours, 'hour')) : ago.format(days, 'day'))
         } else { set(when, 'Sin fecha'); set(agoLine, '') }
-        set(size, release.installer ? sizeMb(release.installer.size) : 'En GitHub')
+        set(size, asset ? sizeMb(asset.size) : 'En GitHub')
+        const system = $('factSystem'), note = $('factSystemNote'), sizeNote = $('factSizeNote')
+        if (system) system.textContent = NAMES[mine]
+        if (note) note.textContent = isLinux ? '64 bits, probado en Fedora' : '10 y 11, de 64 bits'
+        if (sizeNote) sizeNote.textContent = isLinux ? 'Paquete completo (.tar.gz)' : 'Instalador completo'
     }
 
     /** Nothing could be loaded: the tiles say so instead of pulsing for ever. */

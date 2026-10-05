@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Empi Launcher, descarga y novedades</title>
-    <meta name="description" content="Baja mi launcher chistoso para Windows y mira qué le fui metiendo en cada versión.">
+    <meta name="description" content="Baja mi launcher chistoso para Windows o Linux y mira qué le fui metiendo en cada versión.">
     <meta name="theme-color" content="#0b0b0d">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Empi Launcher">
-    <meta property="og:description" content="Baja mi launcher chistoso para Windows y mira qué le fui metiendo en cada versión.">
+    <meta property="og:description" content="Baja mi launcher chistoso para Windows o Linux y mira qué le fui metiendo en cada versión.">
     <meta property="og:image" content="https://empity001.github.io/Empi-Emporium/img/launcher-home.webp">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preload" href="fonts/Doto.woff2" as="font" type="font/woff2" crossorigin>
@@ -50,7 +50,7 @@
     <main>
         <section class="hero wrap" id="inicio">
             <div class="hero-copy">
-                <p class="chip rise" style="--i:0">Mi launcher chistoso para Windows</p>
+                <p class="chip rise" style="--i:0">Mi launcher chistoso para Windows y Linux</p>
                 <h1 class="hero-title rise" style="--i:1" aria-label="Dale a Jugar." data-quiet><span class="line">Dale a</span> <span class="line">Jugar.</span></h1>
                 <p class="hero-sub rise" style="--i:2" data-quiet>Baja mis modpacks y los de mis amigowos, instala el Java que haga falta y los actualiza. Tú solo juegas.</p>
                 <div class="hero-actions rise" style="--i:3">
@@ -58,6 +58,7 @@
                         <svg class="i dl-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
                         <span class="btn-label"><span class="l1">Descargar para Windows</span><span class="l2" aria-hidden="true">¡Ya se baja! ;3</span></span>
                     </a>
+                    <a class="btn big" id="altDownload" href="https://github.com/Empity001/EmpiLauncher/releases/latest" hidden>Descargar para Linux</a>
                     <a class="btn big" href="#novedades">¿Qué hay de nuevo?</a>
                 </div>
             </div>
@@ -78,8 +79,8 @@
                 <dl class="tiles" id="tiles">
                     <div class="tile"><dt>Versión</dt><dd class="num" id="factVersion"><i class="skel"></i></dd><small id="factFile" class="skel-line"></small></div>
                     <div class="tile"><dt>Publicada</dt><dd class="num" id="factDate"><i class="skel"></i></dd><small id="factAgo" class="skel-line"></small></div>
-                    <div class="tile"><dt>Tamaño</dt><dd class="num" id="factSize"><i class="skel"></i></dd><small>Instalador completo</small></div>
-                    <div class="tile"><dt>Sistema</dt><dd class="num">Windows</dd><small>10 y 11, de 64 bits</small></div>
+                    <div class="tile"><dt>Tamaño</dt><dd class="num" id="factSize"><i class="skel"></i></dd><small id="factSizeNote">Instalador completo</small></div>
+                    <div class="tile"><dt>Sistema</dt><dd class="num" id="factSystem">Windows</dd><small id="factSystemNote">10 y 11, de 64 bits</small></div>
                 </dl>
             </div>
         </section>
@@ -141,14 +142,18 @@
                     <p>Nop. Aquí salen los modpacks que hago yo o mis amigowos, y el launcher los baja y los abre. Para crear o importar otros no sirve.</p>
                 </details>
                 <details class="q reveal" style="--i:1" data-quiet>
+                    <summary>¿Y en Linux?</summary>
+                    <p>También. Baja el .tar.gz, lo extraes y corres ./instalar.sh: se mete en tu menú de aplicaciones sin pedir permisos de administrador. Trae su propio Node y la ventana de Microsoft, así que no instalas nada más, y se actualiza solito como el de Windows. Lo probé en Fedora; si en tu distro algo truena, escríbeme.</p>
+                </details>
+                <details class="q reveal" style="--i:2" data-quiet>
                     <summary>Windows me sale con un aviso al instalar</summary>
                     <p>Puede pasar: el instalador todavía no va firmado, porque los certificados cuestan lo suyo. En la ventana azul de SmartScreen dale a Más información y luego a Ejecutar de todos modos. Si tu Windows tiene Smart App Control activado, puede bloquearlo del todo, y ahí sí no puedo hacer nada.</p>
                 </details>
-                <details class="q reveal" style="--i:2" data-quiet>
+                <details class="q reveal" style="--i:3" data-quiet>
                     <summary>¿Tengo que instalar Java?</summary>
                     <p>Nop, olvídate del Java. El launcher instala el que necesite cada modpack.</p>
                 </details>
-                <details class="q reveal" style="--i:3" data-quiet>
+                <details class="q reveal" style="--i:4" data-quiet>
                     <summary>¿Cómo entro?</summary>
                     <p>Con tu cuenta de Microsoft. El login pasa en la página de Microsoft, así que ni el launcher ni yo vemos tu contraseña.</p>
                 </details>
